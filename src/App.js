@@ -4,6 +4,7 @@ import "./App.css";
 import LargeButton from './Components/LargeButton/LargeButton'
 import MedButton from './Components/MedButton/MedButton'
 import SmallButton from './Components/SmallButton/SmallButton';
+import ClickCountButton from './Components/ClickCountButton/ClickCountButton'
 
 
 
@@ -12,7 +13,8 @@ function App() {
   const [buttonCounterTitle, setButtonCounterTitle] = useState(0);
   // const [newState, setNewState] = useState();
   const [clickMe]= useState('click me');
-  const [activeLink]=useState('Shoppies');
+  const [addingToArray]=useState([]);
+  const [activeLink]=useState('Take me to Shoppies');
 
   function increaseButtonCounter() {
     setButtonCounterTitle(buttonCounterTitle + 1);
@@ -25,10 +27,17 @@ function App() {
     setRandomButtonTitle(roundedNumber);
   }
 
+
+  
   function popUpAlert(){
     alert('You clicked me!')
   }
 
+  // function ClickCountButton(){
+  //   const  state = useState(0);
+  //   const count= state[0];
+  //   const setCount = state[1];
+  // }
   
   
 
@@ -65,14 +74,16 @@ function App() {
         callbackFunction={popUpAlert}
         />
 
-        <MedButton
-        buttonTitle={clickMe}
-        callbackFunction={popUpAlert}
-        />
+        {/* <MedButton
+        buttonTitle={clickCount}
+        callbackFunction={addingToArray}
+        /> */}
         
         <SmallButton
         buttonTitle={activeLink}
        />
+
+       <ClickCountButton/>
         
 
 
